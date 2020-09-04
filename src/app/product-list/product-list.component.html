@@ -1,0 +1,38 @@
+<!-- Header "Products" w/ second largest font -->
+<h2>Products</h2>
+
+
+<div *ngFor = "let product of products; index as productId" >
+  <!-- Display product name, 3rd largest font -->
+  <h3> 
+    <!-- Enables product name to be linked (clickable for redirection) -->
+    <a [title]="product.name + ' details'"[routerLink]="['/products', productId]"> <!-- Hover to see "Product name + details" -->
+    {{product.name}} 
+    </a>
+    </h3>
+
+    <!-- Product description -->
+    <!-- List of phones can be found at products.ts -->
+    <p *ngIf="product.description">
+      Description: {{product.description}}
+      </p>  
+
+    <!-- Creates share button, enables share -->
+    <!-- Share method is from product-list-component.ts -->
+    <button (click) = "share()">
+      Click to share
+      </button>
+
+    <!-- Create notify me button. Phone XL costs 799-->
+    <app-product-alerts [product]="product" (notify)="onNotify()">
+      
+
+      </app-product-alerts>
+
+  </div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
