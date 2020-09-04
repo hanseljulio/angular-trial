@@ -12,28 +12,25 @@
 </div>
 
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+<!-- Fill in name -->
+  <div>
+    <label for="name">
+      Name
+    </label>
+    <input id="name" type="text" formControlName="name">
+  </div>
+
+  <!-- Fill in address -->
+  <div>
+    <label for="address">
+      Address
+    </label>
+    <input id="address" type="text" formControlName="address">
+  </div>
+
+  <!-- Submit button -->
   <button class="button" type="submit">
     Purchase
   </button>
+
 </form>
-
-<!-- Fill in name -->
-<div>
-  <label for="name">
-    Name
-  </label>
-  <input id="name" type="text" formControlName="name">
-</div>
-
-<!-- Fill in address -->
-<div>
-  <label for="address">
-    Address
-  </label>
-  <input id="address" type="text" formControlName="address">
-</div>
-
-<!-- Submit button -->
-<button class="button" type="submit">
-  Purchase
-</button>
